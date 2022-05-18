@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+RBYV4yaOZ4oFBIWV/QsKNO3l/c2sSFWOoupN9+ZrkWQfqCPfNdJRzDNg83Sz+IjGqDE7HZiHFopnY2eljEoeQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alijon\\Desktop\\My Work\\C# Course\\Dapper\\Service\\Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alijon\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Alijon\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
+    "C:\\Users\\Alijon\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

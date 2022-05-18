@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "H2K06l9U8chX6K6KOPar7sHlTP40A/+iFul8vhS587IjZXhbmlIezHNiB8d4GiayxD4EkyxmDVz+iPQ+Ok5mxA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alijon\\Desktop\\My Work\\C# Course\\Dapper\\ConsoleApp\\ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alijon\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Alijon\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
+    "C:\\Users\\Alijon\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
