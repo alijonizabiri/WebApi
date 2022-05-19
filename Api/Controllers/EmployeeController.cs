@@ -14,29 +14,29 @@ public class EmployeeController : ControllerBase
     }
 
     [HttpGet("GetEmployeeById")]
-    public Employee GetEmployeeById(int id)
+    public async Task<Employee> GetEmployeeById(int id)
     {
         var result = _employeeService.GetEmployeeById(id);
-        return result;
+        return await result;
     }
 
     [HttpGet ("GetEmployees")]
-    public List<Employee> GetEmplloyees()
+    public async Task<List<Employee>> GetEmplloyees()
     {
-        return _employeeService.GetEmployees();
+        return await _employeeService.GetEmployees();
     }
 
     [HttpPost ("InsertEmployee")]
-    public int InsertEmployee(InsertEmployee employee)
+    public async Task<int> InsertEmployee(InsertEmployee employee)
     {
         var result = _employeeService.InsertEmployee(employee);
-        return result;
+        return await result;
     }
 
     [HttpPut ("UpdateEmployee")]
-    public int UpdateEmployee(InsertEmployee employee, int id)
+    public async Task<int> UpdateEmployee(InsertEmployee employee, int id)
     {
         var result = _employeeService.UpdateEmployee(employee, id);
-        return result;
+        return await result;
     }
 }

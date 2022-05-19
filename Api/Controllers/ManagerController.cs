@@ -15,16 +15,16 @@ public class ManagerController : ControllerBase
     }
 
     [HttpPost ("InsertManager")]
-    public int InsertManager(InsertManager manager)
+    public async Task<int> InsertManager(InsertManager manager)
     {
         var result = _managerService.InsertManager(manager);
-        return result;
+        return await result;
     }
 
     [HttpGet ("GetManagers")]
-    public List<Manager> GetManagers()
+    public async Task<List<Manager>> GetManagers()
     {
         var result = _managerService.GetManagers();
-        return result;
+        return await result;
     }
 }

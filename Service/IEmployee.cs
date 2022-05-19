@@ -2,8 +2,8 @@ using Domain;
 
 public interface IEmployeeService
 {
-    public Employee GetEmployeeById(int Id);
-    public int InsertEmployee(InsertEmployee employee);
-    public int UpdateEmployee(InsertEmployee employee, int Id);
-    public List<Employee> GetEmployees();
+    public Task<Employee> GetEmployeeById(int Id);
+    public Task<int> InsertEmployee(InsertEmployee employee);
+    public Task<int> UpdateEmployee(InsertEmployee employee, int Id);
+    public Task<List<Employee>> GetEmployees();
 }

@@ -12,27 +12,27 @@ public class DepartmentController : ControllerBase
     }
 
     [HttpGet("GetDepartments")]
-    public List<Department> GetDepartments()
+    public async Task<List<Department>> GetDepartments()
     {
-        return _departmentService.GetDepartmentList();
+        return await  _departmentService.GetDepartmentList();
     }
 
     [HttpPost ("InsertDepartment")]
-    public int InsertDepartment(InsertDepartment department)
+    public async Task<int> InsertDepartment(InsertDepartment department)
     {
-        return _departmentService.InsertDepartment(department);
+        return await _departmentService.InsertDepartment(department);
     }
 
     [HttpGet("GetDepartmentById")]
-    public Department GetDepartmentById(int id)
+    public async Task<Department> GetDepartmentById(int id)
     {
         var result = _departmentService.GetDepartmentById(id);
-        return result;
+        return await result;
     }
 
     [HttpPut("UpdateDepartment")]
-    public int UpdateDepartment(InsertDepartment department, int Id)
+    public async Task<int> UpdateDepartment(InsertDepartment department, int Id)
     {
-        return _departmentService.UpdateDepartment(department, Id);
+        return await _departmentService.UpdateDepartment(department, Id);
     }
 }

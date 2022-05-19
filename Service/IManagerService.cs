@@ -2,6 +2,6 @@ using Domain;
 
 public interface IManagerService
 {
-    public int InsertManager(InsertManager manager);
-    public List<Manager> GetManagers();
+    public Task<int> InsertManager(InsertManager manager);
+    public Task<List<Manager>> GetManagers();
 }

@@ -11,20 +11,20 @@ public class ManagerService : IManagerService
         return new NpgsqlConnection (connectionString);
     }
 
-    public int InsertManager(InsertManager manager)
+    public async  Task<int> InsertManager(InsertManager manager)
     {
         using (var conn = GetConnection())
         {
             var sql = $"insert into departmentmanager ( EmployeeId, DepartmentId, FromDate, ToDate ) " + 
                       $" values  ({manager.EmployeeId}, {manager.DepartmentId}, '{manager.FromDate}', '{manager.ToDate}')";
-            var result = conn.Execute(sql);
+            var result = await conn.ExecuteAsync(sql);
 
             return result;  
         }
     }
 
 
-    public List<Manager> GetManagers()
+    public async Task<List<Manager>> GetManagers()
     {
         using (var conn = GetConnection())
         {
@@ -32,7 +32,7 @@ public class ManagerService : IManagerService
                       $"from departmentmanager as m "+
                       $"join department as d on m.departmentid = d.id " +
                       $"join employee as e on m.employeeid = e.id";
-            var result = conn.Query<Manager>(sql);
+            var result = await conn.QueryAsync<Manager>(sql);
             
             return result.ToList();
         }
