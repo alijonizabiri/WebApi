@@ -29,9 +29,9 @@ public class ManagerService : IManagerService
         using (var conn = GetConnection())
         {
             var sql = $"select e.id as ManagerId, concat(e.firsname,' ', e.lastname) as ManagerFullName, d.id as DepartmentId, d.name as DepartmentName, m.fromdate as FromDate, m.todate as Todate " +
-                      $"from departmentmanager as m "+
-                      $"join department as d on m.departmentid = d.id " +
-                      $"join employee as e on m.employeeid = e.id";
+                           $"from departmentmanager as m "+
+                           $"join department as d on m.departmentid = d.id " +
+                           $"join employee as e on m.employeeid = e.id";
             var result = await conn.QueryAsync<Manager>(sql);
             
             return result.ToList();

@@ -16,7 +16,10 @@ public class DepartmentService : IDepartmentService
     {
         using (var conn = GetConnection())
         {
-            var sql = $"select d.name as DepartmentName, d.id as DepartmentId, concat(e.firsname,' ',e.lastname) as ManagerFullName,e.id as ManagerId from department d left join departmentmanager dm on dm.departmentid = d.id left join employee e on e.id = dm.employeeid where d.id = {Id};";
+            var sql = $"select d.name as DepartmentName, d.id as DepartmentId, concat(e.firsname,' ',e.lastname) as ManagerFullName,e.id as ManagerId " +
+                           $"from department d  " +
+                           $"join departmentemployee de on de.departmentid = d.id left " +
+                           $"join employee e on e.id = de.employeeid where d.id = {Id};";
             var result = await conn.QuerySingleOrDefaultAsync<Department>(sql);
 
             return result;
@@ -54,7 +57,10 @@ public class DepartmentService : IDepartmentService
     {
         using (var conn = GetConnection())
         {
-            var sql = $"select d.name as DepartmentName, d.id as DepartmentId, concat(e.firsname,' ',e.lastname) as ManagerFullName,e.id as ManagerId from department d left join departmentmanager dm on dm.departmentid = d.id left join employee e on e.id = dm.employeeid";
+            var sql = $"select d.name as DepartmentName, d.id as DepartmentId, concat(e.firsname,' ',e.lastname) as ManagerFullName,e.id as ManagerId " +
+                           $"from department d  " +
+                           $"join departmentEmployee de on de.departmentid = d.id  " +
+                           $"join employee e on e.id = de.employeeid";
             var result = await conn.QueryAsync<Department>(sql);
             
             return result.ToList();
